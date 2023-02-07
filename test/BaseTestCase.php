@@ -23,8 +23,7 @@ abstract class BaseTestCase extends TestCase
      */
     public function setUp(): void
     {
-        // Error : Class "Dotenv\Dotenv" not found.
-        if (class_exists('Dotenv') && file_exists(__DIR__.'/config/.env')) {
+        if (class_exists('Dotenv\Dotenv') && file_exists(__DIR__.'/config/.env')) {
             $dotenv = Dotenv::createUnsafeImmutable(__DIR__.'/config', '.env');
             $dotenv->safeLoad();
         }
